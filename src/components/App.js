@@ -1,15 +1,19 @@
-import { useContext } from 'react'
 import React from 'react'
-import { UserContext } from "./App"
+import '../styles/App.css';
+import { UserProfile } from './UserProfile';
 
-const UserProfile = () =>{
- const user = useContext(UserContext);
- return (
-    <>
-        <h1 id='name'>Name:- {user.name}</h1>
-        <h1 id='age'>Age:- {user.age}</h1>
-    </>
- )
+const UserContext = React.createContext({name:"Newton", age:3});
+const App = () => {
+
+  return (
+    <div id="main">
+      
+        <UserProfile />
+      
+    </div>
+  )
 }
 
-export {UserProfile}
+
+export default App;
+export {UserContext}
